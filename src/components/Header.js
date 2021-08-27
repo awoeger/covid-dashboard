@@ -5,18 +5,18 @@ export default function Header() {
     <nav className="headerContainer">
       <div className="headerLeft">
         <Link href="/">
-          <a> National Dish Finder</a>
+          <a className="navItems"> National Dish Finder</a>
         </Link>
       </div>
       <div className="headerRight">
         <Link href="/">
-          <a>Continents</a>
+          <a className="navItemsRight">Continents</a>
         </Link>
         <Link href="/">
-          <a>About</a>
+          <a className="navItemsRight">About</a>
         </Link>
         <Link href="/">
-          <a>Contact</a>
+          <a className="navItemsRight">Contact</a>
         </Link>
       </div>
     </nav>
