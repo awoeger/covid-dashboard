@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import * as AiIcons from 'react-icons/ai';
 import styles from '../../styles/Home.module.css';
 import Map from '../components/Map';
 
@@ -11,22 +12,28 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>National Dish Finder</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Find every country's national dish</h1>
-      <label aria-label="Search bar">
-        <input
-          name="Search"
-          placeholder="Search for continents"
-          value={search}
-          onChange={(event) => {
-            setSearch(event.currentTarget.value);
-          }}
-        />
-      </label>
-
+      <section className={styles.searchSection}>
+        <h1 className={styles.heading1}>Find every country's national dish</h1>
+        <div className={styles.searchContainer}>
+          <AiIcons.AiOutlineSearch size="30px" />
+          <label aria-label="Search bar">
+            <input
+              className={styles.searchInput}
+              name="Search"
+              placeholder="Search for country"
+              value={search}
+              onChange={(event) => {
+                setSearch(event.currentTarget.value);
+              }}
+            />
+          </label>
+          <button className={styles.searchButton}>Search</button>
+        </div>
+      </section>
       <Map className={styles.homeMap} center={DEFAULT_CENTER} zoom={12}>
         {({ TileLayer, Marker, Popup }) => (
           <>
