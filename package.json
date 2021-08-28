@@ -8,12 +8,15 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "migrate": "dotenv ley"
   },
   "dependencies": {
     "camelcase-keys": "^7.0.0",
+    "dotenv-cli": "^4.0.0",
     "dotenv-safe": "^8.2.0",
     "leaflet": "^1.7.1",
+    "ley": "^0.7.1",
     "next": "10.0.3",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.6.2",
