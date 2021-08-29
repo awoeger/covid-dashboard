@@ -28,3 +28,22 @@ export function connectOneTimeToDatabase() {
 
 // Connect to PostgreSQL
 const sql = connectOneTimeToDatabase();
+
+// Queries
+
+export async function getAllCountries() {
+  const countries = await sql`
+    SELECT
+      id,
+      continent,
+      country,
+      capital,
+      countrycode,
+      latitude,
+      longitude,
+      dish
+    FROM
+      dishes
+  `;
+  return countries.map((country) => camelcaseKeys(country));
+}
