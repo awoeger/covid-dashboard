@@ -1,12 +1,16 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import ReactCountryFlag from 'react-country-flag';
 import * as AiIcons from 'react-icons/ai';
+import { getAllCountries } from '../../database';
 import styles from '../../styles/Home.module.css';
 import Map from '../components/Map';
 
-const DEFAULT_CENTER = [38.907132, -77.036546];
+const DEFAULT_CENTER = [48.2082, 16.3738];
 
-export default function Home() {
+export default function Home(props) {
+  console.log('Props', props);
+
   const [search, setSearch] = useState('');
 
   return (
@@ -34,21 +38,42 @@ export default function Home() {
           <button className={styles.searchButton}>Search</button>
         </div>
       </section>
-      <Map className={styles.homeMap} center={DEFAULT_CENTER} zoom={12}>
+      <Map className={styles.homeMap} center={DEFAULT_CENTER} zoom={5}>
         {({ TileLayer, Marker, Popup }) => (
           <>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             />
-            <Marker position={DEFAULT_CENTER}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
+
+            {props.allCountries.map((country) => {
+              return (
+                <div key={country.id}>
+                  <Marker position={[country.latitude, country.longitude]}>
+                    <Popup>
+                      <ReactCountryFlag countryCode={country.countrycode} />
+                      <span>{country.country}</span>
+                      <p>Capital city: {country.capital}</p>
+                      <p>National dish: {country.dish}</p>
+                      <button>See recipe</button>
+                    </Popup>
+                  </Marker>
+                </div>
+              );
+            })}
           </>
         )}
       </Map>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const allCountries = await getAllCountries();
+
+  return {
+    props: {
+      allCountries,
+    },
+  };
 }
