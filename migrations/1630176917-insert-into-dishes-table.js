@@ -2,6 +2,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Albania',
+    latitude: 41.3275,
+    longitude: 19.8187,
     dish: 'Tavë Kosi',
     cooking_time: '120',
     servings: '8',
@@ -11,6 +13,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Andorra',
+    latitude: 42.5063,
+    longitude: 1.5218,
     dish: 'Trinxat',
     cooking_time: '50',
     servings: '4',
@@ -21,6 +25,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Armenia',
+    latitude: 40.1872,
+    longitude: 44.5152,
     dish: 'Harissa',
     cooking_time: '120',
     servings: '6',
@@ -31,6 +37,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Austria',
+    latitude: 48.2082,
+    longitude: 16.3738,
     dish: 'Schnitzel',
     cooking_time: '60',
     servings: '4',
@@ -41,6 +49,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Azerbaijan',
+    latitude: 40.4093,
+    longitude: 49.8671,
     dish: 'Plov',
     cooking_time: '90',
     servings: '8',
@@ -51,6 +61,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Belarus',
+    latitude: 53.9006,
+    longitude: 27.559,
     dish: 'Draniki',
     cooking_time: '20',
     servings: '12',
@@ -61,6 +73,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Belgium',
+    latitude: 50.8503,
+    longitude: 4.3517,
     dish: 'Vol au vents',
     cooking_time: '45',
     servings: '5',
@@ -71,6 +85,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Bosnia and Herzegovina',
+    latitude: 43.8563,
+    longitude: 18.4131,
     dish: 'Cevapi',
     cooking_time: '90',
     servings: '6',
@@ -81,6 +97,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Bulgaria',
+    latitude: 42.6977,
+    longitude: 23.3219,
     dish: 'Shopska Salad',
     cooking_time: '80',
     servings: '6',
@@ -95,6 +113,8 @@ exports.up = async function up(sql) {
     dishes,
     'continent',
     'country',
+    'latitude',
+    'longitude',
     'dish',
     'cooking_time',
     'servings',
