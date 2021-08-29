@@ -2,6 +2,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Albania',
+    capital: 'Tirana',
+    countrycode: 'AL',
     latitude: 41.3275,
     longitude: 19.8187,
     dish: 'Tavë Kosi',
@@ -13,6 +15,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Andorra',
+    capital: 'Andorra la Vella',
+    countrycode: 'AD',
     latitude: 42.5063,
     longitude: 1.5218,
     dish: 'Trinxat',
@@ -25,6 +29,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Armenia',
+    capital: 'Yerevan',
+    countrycode: 'AM',
     latitude: 40.1872,
     longitude: 44.5152,
     dish: 'Harissa',
@@ -37,6 +43,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Austria',
+    capital: 'Vienna',
+    countrycode: 'AT',
     latitude: 48.2082,
     longitude: 16.3738,
     dish: 'Schnitzel',
@@ -49,6 +57,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Azerbaijan',
+    capital: 'Baku',
+    countrycode: 'AZ',
     latitude: 40.4093,
     longitude: 49.8671,
     dish: 'Plov',
@@ -61,6 +71,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Belarus',
+    capital: 'Minsk',
+    countrycode: 'BY',
     latitude: 53.9006,
     longitude: 27.559,
     dish: 'Draniki',
@@ -73,6 +85,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Belgium',
+    capital: 'Brussels',
+    countrycode: 'BE',
     latitude: 50.8503,
     longitude: 4.3517,
     dish: 'Vol au vents',
@@ -85,6 +99,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Bosnia and Herzegovina',
+    capital: 'Sarajevo',
+    countrycode: 'BA',
     latitude: 43.8563,
     longitude: 18.4131,
     dish: 'Cevapi',
@@ -97,6 +113,8 @@ const dishes = [
   {
     continent: 'Europe',
     country: 'Bulgaria',
+    capital: 'Sofia',
+    countrycode: 'BG',
     latitude: 42.6977,
     longitude: 23.3219,
     dish: 'Shopska Salad',
@@ -113,6 +131,8 @@ exports.up = async function up(sql) {
     dishes,
     'continent',
     'country',
+    'capital',
+    'countrycode',
     'latitude',
     'longitude',
     'dish',
